@@ -1,40 +1,32 @@
 <?php
     @include 'config.php';
 
-    session_start();
-
     if(isset($_POST['submit'])){
-        
+        $filter_name = filter_var($_POST['name'],FILTER_SANITIZE_STRING);
+        $name = mysqli_real_escape_string($conn,$filter_name);
         $filter_email = filter_var($_POST['email'],FILTER_SANITIZE_STRING);
         $email = mysqli_real_escape_string($conn,$filter_email);
         $filter_pass = filter_var($_POST['pass'],FILTER_SANITIZE_STRING);
         $pass = mysqli_real_escape_string($conn,$filter_pass);
-
+        $filter_cpass = filter_var($_POST['cpass'],FILTER_SANITIZE_STRING);
+        $cpass = mysqli_real_escape_string($conn,$filter_cpass);
 
         $select_users = mysqli_query($conn,"SELECT * FROM users WHERE 
         email = '$email'") or die('query failed');
 
         if(mysqli_num_rows($select_users)> 0){
-            $row = mysqli_fetch_assoc($select_users);
-
-            if($row['user_type']== 'admin'){
-                $_SESSION['admin_name'] = $row['name'];
-                $_SESSION['admin_email'] = $row['email'];
-                $_SESSION['admin_id'] = $row['id'];
-                header('location:admin_page.php');        
-        }
-        elseif($row['user_type']== 'user'){
-
-            $_SESSION['user_name'] = $row['name'];
-            $_SESSION['user_email'] = $row['email'];
-            $_SESSION['user_id'] = $row['id'];
-            header('location:home.php'); 
-
+            $message[]= 'user alredy exist';
         }else{
-            $message[] = 'incorrect email or password!';
+            if($pass != $cpass){
+                $message[] = 'confirm password not matched!';
+        }else{
+            mysqli_query($conn, "INSERT INTO users (name, email, password) VALUES
+            ('$name','$email','$pass')") or die('query failed');
+            $message[] = 'registered successfull!';
+            header('location:login.php');
         }
     }
-    }
+}
 
 ?>
 
@@ -44,7 +36,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Register</title>
 
     <!-- font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -71,12 +63,13 @@ if(isset($message)){
     <section class="form-container">
 
         <form action="" method="post">
-            <h3>Login now</h3>
-            
+            <h3>Register now</h3>
+            <input type="text" name="name" class="box" placeholder="enter your username" required>
             <input type="email" name="email" class="box" placeholder="enter your email" required>
             <input type="password" name="pass" class="box" placeholder="enter your password" required>
-            <input type="submit" class="btn" name="submit" value="login">
-            <p>Don't have an account? <a href="register.php">Register now</a></p>
+            <input type="password" name="cpass" class="box" placeholder="confirm your password" required>
+            <input type="submit" class="btn" name="submit" value="register now">
+            <p>Already have an account? <a href="login.php">Login now</a></p>
         </form>
     </section>
 
