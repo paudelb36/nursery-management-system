@@ -1,20 +1,19 @@
-<?php
-@include 'config.php';
+<!-- <?php
+// @include 'config.php';
 
-session_start();
+// session_start();
 
-$user_id = $_SESSION['user_id'];
+// $user_id = $_SESSION['user_id'];
 
-if(!isset($user_id)){
-   header ("location:login.php");
- }
+// if(!isset($user_id)){
+//    header ("location:login.php");
+//  }
 
- echo $_SESSION['user_name'];
- echo $_SESSION['user_email'];
- ?>
+//  echo $_SESSION['user_name'];
+//  echo $_SESSION['user_email'];
+ ?> -->
 
-
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,8 +30,11 @@ if(!isset($user_id)){
 <script src="js/script.js"></script>
 </head>
 <body>
-    header setcion starts here
-    <header class="header">
+    <?php 
+    include 'header.php';
+    ?>
+    <!-- header setcion starts here -->
+    <!-- <header class="header">
         <a href="#home" class="logo"><i class="fa-solid fa-seedling" ></i> Nursery.</a>
 
         <nav class="navbar">
@@ -53,12 +55,12 @@ if(!isset($user_id)){
             <input type="search" id="search-box" placeholder="search here...">
             <label for="search-box" class="fas fa-search"></label>
         </form>
-    </header>
-    header setion ends here
+    </header> -->
+    <!-- header setion ends here -->
 
 
     
 
 </body>
-</html> -->
+</html> 
 

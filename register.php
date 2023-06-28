@@ -1,35 +1,3 @@
-<?php
-    @include 'config.php';
-
-    if(isset($_POST['submit'])){
-        $filter_name = filter_var($_POST['name'],FILTER_SANITIZE_STRING);
-        $name = mysqli_real_escape_string($conn,$filter_name);
-        $filter_email = filter_var($_POST['email'],FILTER_SANITIZE_STRING);
-        $email = mysqli_real_escape_string($conn,$filter_email);
-        $filter_pass = filter_var($_POST['pass'],FILTER_SANITIZE_STRING);
-        $pass = mysqli_real_escape_string($conn,$filter_pass);
-        $filter_cpass = filter_var($_POST['cpass'],FILTER_SANITIZE_STRING);
-        $cpass = mysqli_real_escape_string($conn,$filter_cpass);
-
-        $select_users = mysqli_query($conn,"SELECT * FROM users WHERE 
-        email = '$email'") or die('query failed');
-
-        if(mysqli_num_rows($select_users)> 0){
-            $message[]= 'user alredy exist';
-        }else{
-            if($pass != $cpass){
-                $message[] = 'confirm password not matched!';
-        }else{
-            mysqli_query($conn, "INSERT INTO users (name, email, password) VALUES
-            ('$name','$email','$pass')") or die('query failed');
-            $message[] = 'registered successfull!';
-            header('location:login.php');
-        }
-    }
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,20 +14,9 @@
 </head>
 
 <body>
+    <!-- header section starts  -->
+    <!-- header section ends  -->
     
-
-<?php
-if(isset($message)){
-    foreach($message as $message);
-    echo '
-    <div class="message">
-        <span>'.$message.'</span>
-        <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-    </div>
-    ';
-
-}
-?>
     <section class="form-container">
 
         <form action="" method="post">
