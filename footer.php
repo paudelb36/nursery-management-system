@@ -23,7 +23,7 @@
             <h3>contact info</h3>
             <p> <i class="fas fa-phone"></i> +977 9898 01010101 </p>
             <p> <i class="fas fa-phone"></i> +111-222-3333-444 </p>
-            <p> <i class="fas fa-envelope"></i> nursarymgmt@gmail.com </p>
+            <p> <i class="fas fa-envelope"></i> nurserymgmt@gmail.com </p>
             <p> <i class="fas fa-map-marker-alt"></i> kathmandu, nepal </p>
         </div>
 

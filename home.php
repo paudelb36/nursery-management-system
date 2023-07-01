@@ -2,8 +2,7 @@
 
 session_start();
 
-if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
-{
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header("location: login.php");
 }
 
@@ -12,6 +11,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,48 +24,87 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
     <link rel="stylesheet" href="css/style.css">
 
     custom js file link
-<script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </head>
+
 <body>
-    <?php 
+    <!-- header section starts -->
+    <?php
     include 'header.php';
     ?>
-    
-    <!-- Main Content Section -->
-    <section class="main-content">
-        <div class="landing-page">
-            <h1>Welcome to the Nursery Management System!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum ante vel urna ullamcorper, at blandit mi fermentum. Sed maximus, justo a tempus fringilla, metus ex commodo sem, vitae tristique urna massa eu purus.</p>
+    <!-- header section ends -->
+
+
+    <!-- Main Content Section starts -->
+    <section class="home">
+
+        <div class="content">
+            <h3>new collections</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime reiciendis, modi placeat sit cumque molestiae.</p>
+            <a href="about.php" class="btn">discover more</a>
         </div>
 
-        <div class="product-list">
-            <h2>Our Products</h2>
-            <div class="product">
-                <img src="images/product1.jpg" alt="Product 1">
-                <h3>Product 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum ante vel urna ullamcorper, at blandit mi fermentum.</p>
-                <a href="product-details.php?id=1">View Details</a>
-            </div>
-
-            <div class="product">
-                <img src="images/product2.jpg" alt="Product 2">
-                <h3>Product 2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum ante vel urna ullamcorper, at blandit mi fermentum.</p>
-                <a href="product-details.php?id=2">View Details</a>
-            </div>
-
-            <!-- Add more product items as needed -->
-        </div>
     </section>
 
+    <section class="products">
+
+        <h1 class="title">latest products</h1>
+
+        <div class="box-container">
+
+           //<?php
+           // $select_products = mysqli_query($conn, "SELECT * FROM `products` LIMIT 6") or die('query failed');
+            //if (mysqli_num_rows($select_products) > 0) {
+           //     while ($fetch_products = mysqli_fetch_assoc($select_products)) {
+            //?>
+                    <form action="" method="POST" class="box">
+                        <a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="fas fa-eye"></a>
+                        <div class="price"></div>
+                        <img src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="" class="image">
+                        <div class="name"></div>
+                        <input type="number" name="product_quantity" value="1" min="0" class="qty">
+                        <input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
+                        <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
+                        <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
+                        <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
+                        <input type="submit" value="add to wishlist" name="add_to_wishlist" class="option-btn">
+                        <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+                    </form>
+            //<?php
+                //}
+           // } else {
+            //    echo '<p class="empty">no products added yet!</p>';
+           // }
+          //  ?>
+
+        </div>
+
+        <div class="more-btn">
+            <a href="shop.php" class="option-btn">load more</a>
+        </div>
+
+    </section>
+
+    <section class="home-contact">
+
+        <div class="content">
+            <h3>have any questions?</h3>
+            
+            <a href="contact.php" class="btn">contact us</a>
+        </div>
+
+    </section>
+    <!-- Main Content Section starts -->
+
+
     <!-- Footer Section -->
-    <?php 
+    <?php
     include 'footer.php';
     ?>
+    <!-- Footer Section ends-->
 
 
-    
 
 </body>
-</html> 
 
+</html>
