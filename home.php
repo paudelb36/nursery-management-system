@@ -1,17 +1,14 @@
-<!-- <?php
-// @include 'config.php';
+<?php
 
-// session_start();
+session_start();
 
-// $user_id = $_SESSION['user_id'];
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
+{
+    header("location: login.php");
+}
 
-// if(!isset($user_id)){
-//    header ("location:login.php");
-//  }
 
-//  echo $_SESSION['user_name'];
-//  echo $_SESSION['user_email'];
- ?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,30 +30,51 @@
     <?php 
     include 'header.php';
     ?>
-    <!-- header setcion starts here -->
-    <!-- <header class="header">
-        <a href="#home" class="logo"><i class="fa-solid fa-seedling" ></i> Nursery.</a>
-
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#products">products</a>
-            <a href="#shop">Shop</a>
-            <a href="#aboutus">About Us</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <div class="icons">
-           <div class="fas fa-bars" id="menu-btn"></div>
-           <div class="fas fa-search" id="search-btn"></div>
-           <div class="fas fa-shopping-cart" id="cart-btn"></div>
-           <div class="fas fa-user" id="login-btn"></div>
+    
+    <!-- Main Content Section -->
+    <section class="main-content">
+        <div class="landing-page">
+            <h1>Welcome to the Nursery Management System!</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum ante vel urna ullamcorper, at blandit mi fermentum. Sed maximus, justo a tempus fringilla, metus ex commodo sem, vitae tristique urna massa eu purus.</p>
         </div>
 
-        <form action="" class="search-form">
-            <input type="search" id="search-box" placeholder="search here...">
-            <label for="search-box" class="fas fa-search"></label>
-        </form>
-    </header> -->
-    <!-- header setion ends here -->
+        <div class="product-list">
+            <h2>Our Products</h2>
+            <div class="product">
+                <img src="images/product1.jpg" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum ante vel urna ullamcorper, at blandit mi fermentum.</p>
+                <a href="product-details.php?id=1">View Details</a>
+            </div>
+
+            <div class="product">
+                <img src="images/product2.jpg" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum ante vel urna ullamcorper, at blandit mi fermentum.</p>
+                <a href="product-details.php?id=2">View Details</a>
+            </div>
+
+            <!-- Add more product items as needed -->
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-container">
+        <div class="footer-info">
+            <h3>Contact Us</h3>
+            <p>123 Main Street, City, Country</p>
+            <p>Phone: +1234567890</p>
+            <p>Email: info@example.com</p>
+        </div>
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
 
 
     
