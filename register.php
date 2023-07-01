@@ -15,17 +15,41 @@
 
 <body>
     <!-- header section starts  -->
+    <?php
+    include 'header.php';
+    ?>
     <!-- header section ends  -->
     
     <section class="form-container">
 
+
         <form action="" method="post">
             <h3>Register now</h3>
-            <input type="text" name="name" class="box" placeholder="enter your username" required>
-            <input type="email" name="email" class="box" placeholder="enter your email" required>
-            <input type="password" name="pass" class="box" placeholder="enter your password" required>
-            <input type="password" name="cpass" class="box" placeholder="confirm your password" required>
-            <input type="submit" class="btn" name="submit" value="register now">
+            <div class="form-group">
+                <label for="name">Username</label>
+                <input type="text" name="name" id="name" class="box" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="box" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" name="phone" id="phone" class="box" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Address</label>
+                <input type="tel" name="mobile" id="mobile" class="box" placeholder="Enter your mobile number" required>
+            </div>
+            <div class="form-group">
+                <label for="pass">Password:</label>
+                <input type="password" name="pass" id="pass" class="box" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group">
+                <label for="cpass">Confirm Password</label>
+                <input type="password" name="cpass" id="cpass" class="box" placeholder="Confirm your password" required>
+            </div>
+            <input type="submit" class="btn" name="submit" value="Register Now">
             <p>Already have an account? <a href="login.php">Login now</a></p>
         </form>
     </section>

@@ -1,24 +1,32 @@
-<!-- header setcion starts here -->
-<header class="header">
-        <a href="#home" class="logo"><i class="fa-solid fa-seedling" ></i> Nursery.</a>
-
+<!-- header section starts  -->
+<header class="header-container">
+        <div class="logo">
+            <i class="fas fa-seedling"></i> Nursery
+        </div>
         <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#products">products</a>
-            <a href="#shop">Shop</a>
-            <a href="#aboutus">About Us</a>
-            <a href="#contact">Contact</a>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">Products</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
         </nav>
         <div class="icons">
-           <div class="fas fa-bars" id="menu-btn"></div>
-           <div class="fas fa-search" id="search-btn"></div>
-           <div class="fas fa-shopping-cart" id="cart-btn"></div>
-           <div class="fas fa-user" id="login-btn"></div>
+            <div id="search-btn">
+                <i class="fas fa-search"></i>
+            </div>
+            <div id="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-
-        <form action="" class="search-form">
-            <input type="search" id="search-box" placeholder="search here...">
-            <label for="search-box" class="fas fa-search"></label>
+        <div class="buttons">
+            <a href="login.php" class="btn">Login</a>
+            <a href="register.php" class="btn">Register</a>
+        </div>
+        <form class="search-form">
+            <label for="search-input">
+                <i class="fas fa-search"></i>
+            </label>
+            <input type="text" id="search-input" placeholder="Search">
         </form>
     </header>
-    <!-- header setion ends here -->
+    <!-- header section ends  -->

@@ -14,7 +14,11 @@
 </head>
 
 <body>
-    
+     <!-- header section starts  -->
+     <?php
+    include 'header.php';
+    ?>
+    <!-- header section ends  -->
 
     <section class="form-container">
 
@@ -27,8 +31,6 @@
             <p>Don't have an account? <a href="register.php">Register now</a></p>
         </form>
     </section>
-
-
 </body>
 
 </html>

@@ -1,23 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-:root{
-    --green:#27ae60;
-    --orange:#f39c12;
-    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
-    --border: .2rem solid rgba(0,0,0,.1);
-    --outline: .1rem solid rgba(0,0,0,.1);
+:root {
+    --green: #27ae60;
+    --orange: #f39c12;
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    --border: .2rem solid rgba(0, 0, 0, .1);
+    --outline: .1rem solid rgba(0, 0, 0, .1);
     --outline-hover: 2rem solid var(--black);
-    --pink:#e84393;
+    --pink: #e84393;
     --red: #c0392b;
     --black: #333;
     --white: #fff;
     --light-color: #666;
     --light-white: #ccc;
     --light-bg: #f5f5f5;
-  
 }
 
-*{
+* {
     font-family: 'Nunito Sans', sans-serif;
     margin: 0;
     padding: 0;
@@ -27,40 +26,145 @@
     border: none;
     transition: all .2s linear;
 }
-*::selection{
+
+*::selection {
     background-color: var(--green);
     color: var(--white);
 }
 
-*::-webkit-scrollbar{
+*::-webkit-scrollbar {
     height: .5rem;
     width: 1rem;
 }
 
-*::-webkit-scrollbar-track{
+*::-webkit-scrollbar-track {
     background-color: transparent;
 }
 
-*::-webkit-scrollbar-thumb{
+*::-webkit-scrollbar-thumb {
     background-color: var(--green);
 }
 
-html{
+html {
     font-size: 62.5%;
     overflow-x: hidden;
     scroll-padding-top: 7rem;
     scroll-behavior: smooth;
-
 }
-body{
+
+body {
     background: var(--light-bg);
 }
-section{
+
+section {
     padding: 3rem 2rem;
 }
+
+/* header section css code starts */
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 1rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+.header-container .logo {
+    color: var(--black);
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+.header-container .logo i {
+    color: var(--green);
+}
+
+.header-container .navbar a {
+    font-size: 2rem;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    color: var(--light-color);
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+.header-container .navbar a:hover {
+    color: #fff;
+    background: var(--green);
+}
+
+.header-container .icons div {
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color: var(--black);
+    font-size: 2rem;
+    margin-right: .3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header-container .icons div:hover {
+    background: var(--green);
+    color: #fff;
+}
+
+#menu-btn {
+    display: none;
+}
+
+.header-container .search-form {
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    width: 50rem;
+    height: 5rem;
+    background: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+.header-container .search-form.active {
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header-container .search-form input {
+    height: 100%;
+    width: 100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 0 1.5rem;
+}
+
+.header-container .search-form label {
+    font-size: 2.2rem;
+    padding-right: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header-container .search-form label:hover {
+    color: var(--green);
+}
+/* header section css code ends */
+
 .btn,
 .delete-btn,
-.option-btn{
+.option-btn {
     display: inline-block;
     border-radius: .5rem;
     margin-top: 1rem;
@@ -70,7 +174,33 @@ section{
     padding: 1rem 3rem;
     text-transform: capitalize;
 }
-.message{
+
+/* login/register btn css starts */
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.buttons .btn {
+    background-color: var(--green);
+    color: var(--white);
+    margin-left: 1rem;
+}
+
+.buttons .btn:hover {
+    background-color: var(--black);
+}
+
+.buttons a:first-child {
+    margin-left: 0;
+}
+
+.buttons a:last-child {
+    margin-right: 0;
+}
+/* login/register btn css ends */
+
+.message {
     position: sticky;
     top: 0;
     margin: 0 auto;
@@ -82,43 +212,50 @@ section{
     gap: 1.5rem;
     z-index: 10000;
     justify-content: space-between;
-
-
 }
-.message span{
+
+.message span {
     color: var(--black);
     font-size: 2rem;
 }
-.message i{
+
+.message i {
     font-size: 2rem;
     color: var(--red);
     cursor: pointer;
 }
-.message i:hover{
+
+.message i:hover {
     transform: rotate(90deg);
 }
-.btn{
+
+.btn {
     background-color: var(--green);
 }
-.delete-btn{
+
+.delete-btn {
     background-color: var(--red);
 }
-.option-btn{
+
+.option-btn {
     background-color: var(--orange);
 }
+
 .btn:hover,
 .delete-btn:hover,
-.option-btn:hover{
+.option-btn:hover {
     background-color: var(--black);
 }
-.form-container{
+
+.form-container {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    margin-top: 5rem;
 }
 
-.form-container form{
+.form-container form {
     padding: 2rem;
     border-radius: .5rem;
     border: var(--border);
@@ -127,14 +264,45 @@ section{
     width: 50rem;
     text-align: center;
 }
-.form-container form h3{
+
+.form-container form h3 {
     font-size: 2rem;
     text-transform: uppercase;
     color: var(--black);
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
-.form-container form .box{
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.form-group:last-child {
+    margin-bottom: 3rem;
+}
+
+.form-group label {
+    width: 20%;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 1rem;
+    color: var(--black);
+}
+
+.form-group input {
+    flex: 1;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    border: var(--border);
+    background-color: var(--light-bg);
+    margin: 0;
+    border-radius: .5rem;
+}
+
+.form-container form .box {
     width: 100%;
     padding: 1.2rem 1.4rem;
     font-size: 1.8rem;
@@ -143,114 +311,22 @@ section{
     background-color: var(--light-bg);
     margin: 1rem 0;
     border-radius: .5rem;
-
 }
-.form-container form p{
-    margin-top: 2rem;
+
+.form-container form p {
+    margin-top: 3rem;
     font-size: 2rem;
     color: var(--light-color);
     text-align: center;
 }
-.form-container form p a{
+
+.form-container form p a {
     color: var(--green);
 }
-.form-container form p a:hover{
+
+.form-container form p a:hover {
     text-decoration: underline;
 }
-.header{
-    position:fixed;
-    top:0;
-    left: 0;
-    right: 0;
-    background: #fff;
-    padding:2rem 9%;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1000;
-    box-shadow: var(--box-shadow);
-}
-
-.header .logo {
-    color: var(--black);
-    font-size: 2.5rem;
-    font-weight: bolder;
-    /* nursery. */
-}
-
-.header .logo i{
-    color: var(--green);
-    /* logo */
-}
-
-.header .navbar a{
-    font-size: 2rem;
-    border-radius: .5rem;
-    padding: .5rem 1.5rem;
-    color: var(--light-color);
-}
-
-.header .navbar a:hover{
-    color: #fff;
-    background: var(--green);
-}
-
-.header .icons div{  
-    height: 4.5rem;
-    width: 4.5rem;
-    line-height: 4.5rem;
-    border-radius: .5rem;
-    background: #eee;
-    color: var(--black);
-    font-size: 2rem;
-    margin-right: .3rem;
-    cursor: pointer;
-    text-align: center;
-    
-    
-}
-.header .icons div:hover{
-    background: var(--green);
-    color: #fff;
-}
-#menu-btn{
-    display: none;
-}
-.header .search-form{
-    position: absolute;
-    top: 110%; right: -110%;
-    width: 50rem;
-    height: 5rem;
-    background: #fff;
-    border-radius: .5rem;
-    overflow: hidden;
-    display: flex; 
-    align-items: center;
-    box-shadow: var(--box-shadow);
-}
-
-.header .search-form.active{
-    right:2rem;
-    transition: .4s linear;
-}
-.header .search-form input{
-    height: 100%;
-    width: 100%;
-    background: none;
-    text-transform: none;
-    font-size: 1.6rem;
-    color: var(--black);
-    padding: 0 1.5rem;
-}
-.header .search-form label{
-    font-size: 2.2rem;
-    padding-right: 1.5rem;
-    color: var(--black);
-    cursor: pointer;
-}
-.header .search-form label:hover{
-    color: var(--green);
-}
 
 
 
@@ -264,14 +340,33 @@ section{
 
 
 
-/* media queries*/
-@media(max-width:991px){
-    html{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries */
+@media (max-width: 991px) {
+    html {
         font-size: 55%;
     }
 }
-@media(max-width:450px){
-    html{
+
+@media (max-width: 450px) {
+    html {
         font-size: 50%;
     }
 }
