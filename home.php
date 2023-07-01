@@ -59,22 +59,9 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
     </section>
 
     <!-- Footer Section -->
-    <footer class="footer-container">
-        <div class="footer-info">
-            <h3>Contact Us</h3>
-            <p>123 Main Street, City, Country</p>
-            <p>Phone: +1234567890</p>
-            <p>Email: info@example.com</p>
-        </div>
-        <div class="footer-social">
-            <h3>Follow Us</h3>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
+    <?php 
+    include 'footer.php';
+    ?>
 
 
     

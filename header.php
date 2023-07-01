@@ -4,11 +4,11 @@
         <i class="fas fa-seedling"></i> Nursery
     </div>
     <nav class="navbar">
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">Products</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="home.php">Home</a>
+        <a href="shop.php">Shop</a>
+        <a href="product.php">Products</a>
+        <a href="about.php">About</a>
+        <a href="contact.php">Contact</a>
     </nav>
     <div class="icons">
         <div id="search-btn">
