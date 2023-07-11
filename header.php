@@ -1,7 +1,7 @@
 <!-- header section starts  -->
 <header class="header-container">
     <div class="logo">
-        <i class="fas fa-seedling"></i> Nursery
+        <i class="fas fa-seedling"></i> <a href="home.php">Nursery</a>
     </div>
     <nav class="navbar">
         <a href="home.php">Home</a>
