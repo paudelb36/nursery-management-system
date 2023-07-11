@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $param_email = $email;
             $param_address = $address;
             $param_phone = $phone;
-            $param_password = password_hash($password, PASSWORD_DEFAULT);
+            $param_password = $password;
 
             //Try to execute the query
             if (mysqli_stmt_execute($stmt)) {

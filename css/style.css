@@ -401,36 +401,38 @@ section {
     color:var(--black);
  }
 /* heading in contact starts */
-.heading{
+.heading {
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    gap:1rem;
+    gap: 1rem;
     background-color: var(--black);
     text-align: center;
-    min-height: 25vh;
- }
- 
- .heading h3{
+    min-height: calc(100vh - 7rem); /* Subtract the header height from the viewport height */
+    padding-top: 7rem; /* Add the header height as top padding */
+}
+
+.heading h3 {
     font-size: 5.5rem;
-    color:var(--white);
+    color: var(--white);
     text-transform: uppercase;
- }
- 
- .heading p{
+}
+
+.heading p {
     font-size: 2.5rem;
-    color:var(--light-white);
- }
- 
- .heading p a{
-    color:var(--pink);
- }
- 
- .heading p a:hover{
+    color: var(--light-white);
+}
+
+.heading p a {
+    color: var(--pink);
+}
+
+.heading p a:hover {
     text-decoration: underline;
- }
+}
 /* heading in contact ends */
+
 
 /* home-contact Section ends */
 
